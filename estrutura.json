@@ -1,0 +1,5748 @@
+{
+  "jar": "BlockBuster.jar",
+  "nome_projeto": "blockbuster",
+  "midlet": null,
+  "canvas": "BlockBuster",
+  "classes": [
+    {
+      "arquivo": "Ball.class",
+      "nome": "Ball",
+      "super": "Object",
+      "campos": [
+        {
+          "nome": "random",
+          "desc": "Ljava/util/Random;",
+          "tipo_c": "Random*"
+        },
+        {
+          "nome": "dgreeChk",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "cnt",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "minX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "minY",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "maxX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "maxY",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "posX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "posY",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "deltaX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "deltaY",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "court",
+          "desc": "LCourt;",
+          "tipo_c": "Court*"
+        },
+        {
+          "nome": "outOfPlay",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ballmove",
+          "desc": "Z",
+          "tipo_c": "int"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<clinit>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 7,
+          "apis": {
+            "java/util/Random.<init>": 1
+          },
+          "constantes": [
+            [
+              4,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "java/util/Random.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              3,
+              "putstatic",
+              "Ball.random"
+            ],
+            [
+              5,
+              "putstatic",
+              "Ball.cnt"
+            ]
+          ]
+        },
+        {
+          "nome": "<init>",
+          "desc": "(LCourt;)V",
+          "tipo_ret": "void",
+          "n_instr": 27,
+          "apis": {
+            "java/lang/Object.<init>": 1
+          },
+          "constantes": [
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              18,
+              3
+            ],
+            [
+              21,
+              88
+            ],
+            [
+              24,
+              76
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "java/lang/Object.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "Ball.dgreeChk"
+            ],
+            [
+              7,
+              "putfield",
+              "Ball.outOfPlay"
+            ],
+            [
+              10,
+              "putfield",
+              "Ball.ballmove"
+            ],
+            [
+              13,
+              "putfield",
+              "Ball.court"
+            ],
+            [
+              16,
+              "putfield",
+              "Ball.minX"
+            ],
+            [
+              19,
+              "putfield",
+              "Ball.minY"
+            ],
+            [
+              22,
+              "putfield",
+              "Ball.maxX"
+            ],
+            [
+              25,
+              "putfield",
+              "Ball.maxY"
+            ]
+          ]
+        },
+        {
+          "nome": "RBallMove",
+          "desc": "()Z",
+          "tipo_ret": "int",
+          "n_instr": 3,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Ball.ballmove"
+            ]
+          ]
+        },
+        {
+          "nome": "SetPos",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 6,
+          "apis": {},
+          "constantes": [
+            [
+              2,
+              5
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "Ball.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "inPlay",
+          "desc": "()Z",
+          "tipo_ret": "int",
+          "n_instr": 5,
+          "apis": {},
+          "constantes": [
+            [
+              2,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Ball.outOfPlay"
+            ]
+          ]
+        },
+        {
+          "nome": "inPlayChange",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Ball.outOfPlay"
+            ]
+          ]
+        },
+        {
+          "nome": "move",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 215,
+          "apis": {},
+          "constantes": [
+            [
+              17,
+              78
+            ],
+            [
+              32,
+              1
+            ],
+            [
+              50,
+              1
+            ],
+            [
+              61,
+              0
+            ],
+            [
+              64,
+              0
+            ],
+            [
+              74,
+              79
+            ],
+            [
+              77,
+              1
+            ],
+            [
+              87,
+              1
+            ],
+            [
+              91,
+              4
+            ],
+            [
+              99,
+              10
+            ],
+            [
+              103,
+              35
+            ],
+            [
+              110,
+              4
+            ],
+            [
+              122,
+              4
+            ],
+            [
+              128,
+              1
+            ],
+            [
+              160,
+              1
+            ],
+            [
+              185,
+              1
+            ],
+            [
+              189,
+              3
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Ball.outOfPlay"
+            ],
+            [
+              4,
+              "getfield",
+              "Ball.ballmove"
+            ],
+            [
+              8,
+              "getfield",
+              "Ball.deltaY"
+            ],
+            [
+              11,
+              "getfield",
+              "Ball.posY"
+            ],
+            [
+              13,
+              "getfield",
+              "Ball.maxY"
+            ],
+            [
+              16,
+              "getfield",
+              "Ball.posY"
+            ],
+            [
+              20,
+              "getfield",
+              "Ball.court"
+            ],
+            [
+              22,
+              "getfield",
+              "Ball.posX"
+            ],
+            [
+              26,
+              "getfield",
+              "Ball.court"
+            ],
+            [
+              28,
+              "getfield",
+              "Ball.posX"
+            ],
+            [
+              33,
+              "putfield",
+              "Ball.dgreeChk"
+            ],
+            [
+              35,
+              "getfield",
+              "Ball.deltaX"
+            ],
+            [
+              39,
+              "getfield",
+              "Ball.deltaX"
+            ],
+            [
+              41,
+              "putfield",
+              "Ball.deltaX"
+            ],
+            [
+              44,
+              "getfield",
+              "Ball.court"
+            ],
+            [
+              46,
+              "getfield",
+              "Ball.posX"
+            ],
+            [
+              51,
+              "putfield",
+              "Ball.dgreeChk"
+            ],
+            [
+              53,
+              "getfield",
+              "Ball.deltaX"
+            ],
+            [
+              57,
+              "getfield",
+              "Ball.deltaX"
+            ],
+            [
+              59,
+              "putfield",
+              "Ball.deltaX"
+            ]
+          ]
+        },
+        {
+          "nome": "paint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 18,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 1,
+            "javax/microedition/lcdui/Graphics.fillArc": 1
+          },
+          "constantes": [
+            [
+              5,
+              13311
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              13,
+              5
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              15,
+              360
+            ]
+          ],
+          "chamadas": [
+            [
+              6,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Ball.outOfPlay"
+            ],
+            [
+              9,
+              "getfield",
+              "Ball.posX"
+            ],
+            [
+              11,
+              "getfield",
+              "Ball.posY"
+            ]
+          ]
+        },
+        {
+          "nome": "putInPlay",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 26,
+          "apis": {
+            "java/util/Random.nextInt": 1
+          },
+          "constantes": [
+            [
+              1,
+              0
+            ],
+            [
+              4,
+              46
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              16,
+              1
+            ],
+            [
+              23,
+              -1
+            ]
+          ],
+          "chamadas": [
+            [
+              15,
+              "java/util/Random.nextInt"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Ball.outOfPlay"
+            ],
+            [
+              5,
+              "putfield",
+              "Ball.posX"
+            ],
+            [
+              8,
+              "getfield",
+              "Ball.maxY"
+            ],
+            [
+              9,
+              "putfield",
+              "Ball.posY"
+            ],
+            [
+              12,
+              "putfield",
+              "Ball.deltaY"
+            ],
+            [
+              14,
+              "getstatic",
+              "Ball.random"
+            ],
+            [
+              18,
+              "putfield",
+              "Ball.deltaX"
+            ],
+            [
+              20,
+              "getfield",
+              "Ball.deltaX"
+            ],
+            [
+              24,
+              "putfield",
+              "Ball.deltaX"
+            ]
+          ]
+        },
+        {
+          "nome": "putInPlayAdd",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 30,
+          "apis": {
+            "java/util/Random.nextInt": 1
+          },
+          "constantes": [
+            [
+              3,
+              0
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              15,
+              -1
+            ],
+            [
+              20,
+              1
+            ],
+            [
+              27,
+              -1
+            ]
+          ],
+          "chamadas": [
+            [
+              19,
+              "java/util/Random.nextInt"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "Ball.outOfPlay"
+            ],
+            [
+              9,
+              "putfield",
+              "Ball.posX"
+            ],
+            [
+              12,
+              "getfield",
+              "Ball.maxY"
+            ],
+            [
+              13,
+              "putfield",
+              "Ball.posY"
+            ],
+            [
+              16,
+              "putfield",
+              "Ball.deltaY"
+            ],
+            [
+              18,
+              "getstatic",
+              "Ball.random"
+            ],
+            [
+              22,
+              "putfield",
+              "Ball.deltaX"
+            ],
+            [
+              24,
+              "getfield",
+              "Ball.deltaX"
+            ],
+            [
+              28,
+              "putfield",
+              "Ball.deltaX"
+            ]
+          ]
+        },
+        {
+          "nome": "setBallMoveOff",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Ball.ballmove"
+            ]
+          ]
+        },
+        {
+          "nome": "setBallMoveOn",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Ball.ballmove"
+            ]
+          ]
+        },
+        {
+          "nome": "takeOutOfPlay",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Ball.outOfPlay"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "java/util/Random.<init>": 1,
+        "java/lang/Object.<init>": 1,
+        "javax/microedition/lcdui/Graphics.setColor": 1,
+        "javax/microedition/lcdui/Graphics.fillArc": 1,
+        "java/util/Random.nextInt": 2
+      },
+      "padroes": [
+        "TEM_PAINT"
+      ]
+    },
+    {
+      "arquivo": "BlockBuster.class",
+      "nome": "BlockBuster",
+      "super": "Canvas",
+      "campos": [
+        {
+          "nome": "CmdExit",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "CmdStart",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "CmdPlay",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "Cmdstop",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "CmdReStart",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "display",
+          "desc": "Ljavax/microedition/lcdui/Display;",
+          "tipo_c": "Display*"
+        },
+        {
+          "nome": "court",
+          "desc": "LCourt;",
+          "tipo_c": "Court*"
+        },
+        {
+          "nome": "mbox",
+          "desc": "LMsgBox;",
+          "tipo_c": "MsgBox*"
+        },
+        {
+          "nome": "paused",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "StageNo",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "gamespeed",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "RStore",
+          "desc": "Ljavax/microedition/rms/RecordStore;",
+          "tipo_c": "RecordStore*"
+        },
+        {
+          "nome": "gameThread",
+          "desc": "Ljava/lang/Thread;",
+          "tipo_c": "Thread*"
+        },
+        {
+          "nome": "highScoreID",
+          "desc": "I",
+          "tipo_c": "int"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<init>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 86,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.<init>": 1,
+            "javax/microedition/lcdui/Command.<init>": 5,
+            "javax/microedition/lcdui/Display.getDisplay": 1,
+            "javax/microedition/lcdui/Displayable.addCommand": 2,
+            "javax/microedition/lcdui/Displayable.setCommandListener": 1
+          },
+          "constantes": [
+            [
+              3,
+              1
+            ],
+            [
+              6,
+              60
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              20,
+              1
+            ],
+            [
+              21,
+              2
+            ],
+            [
+              28,
+              1
+            ],
+            [
+              29,
+              3
+            ],
+            [
+              36,
+              1
+            ],
+            [
+              37,
+              4
+            ],
+            [
+              44,
+              1
+            ],
+            [
+              45,
+              3
+            ],
+            [
+              78,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/midlet/MIDlet.<init>"
+            ],
+            [
+              14,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              22,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              30,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              38,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              46,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              50,
+              "javax/microedition/lcdui/Display.getDisplay"
+            ],
+            [
+              67,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              72,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              76,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "BlockBuster.paused"
+            ],
+            [
+              7,
+              "putfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              15,
+              "putfield",
+              "BlockBuster.CmdStart"
+            ],
+            [
+              23,
+              "putfield",
+              "BlockBuster.CmdExit"
+            ],
+            [
+              31,
+              "putfield",
+              "BlockBuster.CmdPlay"
+            ],
+            [
+              39,
+              "putfield",
+              "BlockBuster.Cmdstop"
+            ],
+            [
+              47,
+              "putfield",
+              "BlockBuster.CmdReStart"
+            ],
+            [
+              51,
+              "putfield",
+              "BlockBuster.display"
+            ],
+            [
+              57,
+              "putfield",
+              "BlockBuster.court"
+            ],
+            [
+              62,
+              "putfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              64,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              66,
+              "getfield",
+              "BlockBuster.CmdStart"
+            ],
+            [
+              69,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              71,
+              "getfield",
+              "BlockBuster.CmdExit"
+            ],
+            [
+              74,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              79,
+              "putfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              82,
+              "putfield",
+              "BlockBuster.RStore"
+            ]
+          ]
+        },
+        {
+          "nome": "FirstStart",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 49,
+          "apis": {
+            "javax/microedition/lcdui/Display.setCurrent": 2,
+            "javax/microedition/lcdui/Canvas.repaint": 1,
+            "java/lang/Thread.sleep": 1,
+            "javax/microedition/lcdui/Displayable.removeCommand": 2,
+            "javax/microedition/lcdui/Displayable.addCommand": 2,
+            "javax/microedition/lcdui/Displayable.setCommandListener": 1
+          },
+          "constantes": [
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              27,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              11,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              13,
+              "java/lang/Thread.sleep"
+            ],
+            [
+              18,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              33,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              38,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              43,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              47,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "BlockBuster.display"
+            ],
+            [
+              3,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              6,
+              "putstatic",
+              "MsgBox.stgNum"
+            ],
+            [
+              8,
+              "putstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              10,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              15,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              17,
+              "getfield",
+              "BlockBuster.CmdStart"
+            ],
+            [
+              20,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              22,
+              "getfield",
+              "BlockBuster.CmdExit"
+            ],
+            [
+              28,
+              "putfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              30,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              32,
+              "getfield",
+              "BlockBuster.CmdPlay"
+            ],
+            [
+              35,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              37,
+              "getfield",
+              "BlockBuster.CmdExit"
+            ],
+            [
+              40,
+              "getfield",
+              "BlockBuster.display"
+            ],
+            [
+              42,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              45,
+              "getfield",
+              "BlockBuster.court"
+            ]
+          ]
+        },
+        {
+          "nome": "ShowMsg",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 52,
+          "apis": {
+            "javax/microedition/lcdui/Display.setCurrent": 2,
+            "javax/microedition/lcdui/Canvas.repaint": 1,
+            "javax/microedition/lcdui/Displayable.addCommand": 2,
+            "javax/microedition/lcdui/Displayable.setCommandListener": 1,
+            "java/lang/Thread.sleep": 1
+          },
+          "constantes": [
+            [
+              18,
+              3
+            ],
+            [
+              21,
+              5
+            ],
+            [
+              47,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              29,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              34,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              38,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ],
+            [
+              41,
+              "java/lang/Thread.sleep"
+            ],
+            [
+              46,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "BlockBuster.display"
+            ],
+            [
+              3,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              5,
+              "getstatic",
+              "Court.score"
+            ],
+            [
+              6,
+              "putstatic",
+              "MsgBox.mscore"
+            ],
+            [
+              7,
+              "getstatic",
+              "Court.hiscore"
+            ],
+            [
+              8,
+              "putstatic",
+              "MsgBox.hiscore"
+            ],
+            [
+              10,
+              "getfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              11,
+              "putstatic",
+              "MsgBox.stgNum"
+            ],
+            [
+              13,
+              "putstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              15,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              26,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              28,
+              "getfield",
+              "BlockBuster.CmdReStart"
+            ],
+            [
+              31,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              33,
+              "getfield",
+              "BlockBuster.CmdExit"
+            ],
+            [
+              36,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              43,
+              "getfield",
+              "BlockBuster.display"
+            ],
+            [
+              45,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              48,
+              "putstatic",
+              "Court.Msging"
+            ]
+          ]
+        },
+        {
+          "nome": "SlowDown",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 14,
+          "apis": {},
+          "constantes": [
+            [
+              3,
+              5
+            ],
+            [
+              8,
+              90
+            ],
+            [
+              11,
+              90
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              5,
+              "putfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              7,
+              "getfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              12,
+              "putfield",
+              "BlockBuster.gamespeed"
+            ]
+          ]
+        },
+        {
+          "nome": "SpeedUp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 14,
+          "apis": {},
+          "constantes": [
+            [
+              3,
+              5
+            ],
+            [
+              8,
+              30
+            ],
+            [
+              11,
+              30
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              5,
+              "putfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              7,
+              "getfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              12,
+              "putfield",
+              "BlockBuster.gamespeed"
+            ]
+          ]
+        },
+        {
+          "nome": "ThreadStart",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 10,
+          "apis": {
+            "java/lang/Thread.<init>": 1,
+            "java/lang/Thread.start": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              4,
+              "java/lang/Thread.<init>"
+            ],
+            [
+              8,
+              "java/lang/Thread.start"
+            ]
+          ],
+          "fields": [
+            [
+              5,
+              "putfield",
+              "BlockBuster.gameThread"
+            ],
+            [
+              7,
+              "getfield",
+              "BlockBuster.gameThread"
+            ]
+          ]
+        },
+        {
+          "nome": "WriteHiScore",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 33,
+          "apis": {
+            "java/io/ByteArrayOutputStream.<init>": 1,
+            "java/io/DataOutputStream.<init>": 1,
+            "java/io/DataOutputStream.writeInt": 1,
+            "java/io/ByteArrayOutputStream.toByteArray": 1,
+            "javax/microedition/rms/RecordStore.setRecord": 1
+          },
+          "constantes": [
+            [
+              26,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              6,
+              "java/io/ByteArrayOutputStream.<init>"
+            ],
+            [
+              11,
+              "java/io/DataOutputStream.<init>"
+            ],
+            [
+              15,
+              "java/io/DataOutputStream.writeInt"
+            ],
+            [
+              19,
+              "java/io/ByteArrayOutputStream.toByteArray"
+            ],
+            [
+              29,
+              "javax/microedition/rms/RecordStore.setRecord"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              14,
+              "getstatic",
+              "Court.hiscore"
+            ],
+            [
+              22,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              24,
+              "getfield",
+              "BlockBuster.highScoreID"
+            ]
+          ]
+        },
+        {
+          "nome": "commandAction",
+          "desc": "(Ljavax/microedition/lcdui/Command;Ljavax/microedition/lcdui/Displayable;)V",
+          "tipo_ret": "void",
+          "n_instr": 116,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.notifyDestroyed": 1,
+            "javax/microedition/lcdui/Display.setCurrent": 1,
+            "javax/microedition/lcdui/Displayable.removeCommand": 4,
+            "javax/microedition/lcdui/Displayable.addCommand": 3
+          },
+          "constantes": [
+            [
+              7,
+              0
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              24,
+              0
+            ],
+            [
+              33,
+              0
+            ],
+            [
+              36,
+              1
+            ],
+            [
+              43,
+              0
+            ],
+            [
+              45,
+              3
+            ],
+            [
+              47,
+              0
+            ],
+            [
+              66,
+              0
+            ],
+            [
+              80,
+              1
+            ],
+            [
+              84,
+              1
+            ],
+            [
+              103,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              10,
+              "javax/microedition/midlet/MIDlet.notifyDestroyed"
+            ],
+            [
+              42,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              58,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              63,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              72,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              90,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              95,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              109,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              114,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "BlockBuster.CmdExit"
+            ],
+            [
+              14,
+              "getfield",
+              "BlockBuster.CmdStart"
+            ],
+            [
+              21,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              23,
+              "putfield",
+              "Court.Playing"
+            ],
+            [
+              25,
+              "putstatic",
+              "Court.Msging"
+            ],
+            [
+              29,
+              "getfield",
+              "BlockBuster.CmdReStart"
+            ],
+            [
+              32,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              37,
+              "putfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              39,
+              "getfield",
+              "BlockBuster.display"
+            ],
+            [
+              41,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              44,
+              "putstatic",
+              "Court.score"
+            ],
+            [
+              46,
+              "putstatic",
+              "Court.life"
+            ],
+            [
+              48,
+              "putstatic",
+              "Court.Msging"
+            ],
+            [
+              50,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              52,
+              "getfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              55,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              57,
+              "getfield",
+              "BlockBuster.Cmdstop"
+            ],
+            [
+              60,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              62,
+              "getfield",
+              "BlockBuster.CmdPlay"
+            ],
+            [
+              65,
+              "getfield",
+              "BlockBuster.court"
+            ]
+          ]
+        },
+        {
+          "nome": "destroyApp",
+          "desc": "(Z)V",
+          "tipo_ret": "void",
+          "n_instr": 3,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "load",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 80,
+          "apis": {
+            "javax/microedition/rms/RecordStore.getNumRecords": 1,
+            "java/io/ByteArrayOutputStream.<init>": 1,
+            "java/io/DataOutputStream.<init>": 1,
+            "java/io/DataOutputStream.writeInt": 1,
+            "java/io/ByteArrayOutputStream.toByteArray": 1,
+            "javax/microedition/rms/RecordStore.addRecord": 1,
+            "javax/microedition/rms/RecordStore.getNextRecordID": 1,
+            "javax/microedition/rms/RecordStore.getRecord": 1,
+            "java/io/ByteArrayInputStream.<init>": 1,
+            "java/io/DataInputStream.<init>": 1,
+            "java/io/DataInputStream.readInt": 1
+          },
+          "constantes": [
+            [
+              10,
+              0
+            ],
+            [
+              33,
+              0
+            ],
+            [
+              50,
+              1
+            ],
+            [
+              75,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              8,
+              "javax/microedition/rms/RecordStore.getNumRecords"
+            ],
+            [
+              14,
+              "java/io/ByteArrayOutputStream.<init>"
+            ],
+            [
+              19,
+              "java/io/DataOutputStream.<init>"
+            ],
+            [
+              23,
+              "java/io/DataOutputStream.writeInt"
+            ],
+            [
+              27,
+              "java/io/ByteArrayOutputStream.toByteArray"
+            ],
+            [
+              36,
+              "javax/microedition/rms/RecordStore.addRecord"
+            ],
+            [
+              42,
+              "javax/microedition/rms/RecordStore.getNextRecordID"
+            ],
+            [
+              57,
+              "javax/microedition/rms/RecordStore.getRecord"
+            ],
+            [
+              64,
+              "java/io/ByteArrayInputStream.<init>"
+            ],
+            [
+              69,
+              "java/io/DataInputStream.<init>"
+            ],
+            [
+              72,
+              "java/io/DataInputStream.readInt"
+            ]
+          ],
+          "fields": [
+            [
+              3,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              7,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              11,
+              "putstatic",
+              "Court.hiscore"
+            ],
+            [
+              22,
+              "getstatic",
+              "Court.hiscore"
+            ],
+            [
+              31,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              37,
+              "putfield",
+              "BlockBuster.highScoreID"
+            ],
+            [
+              41,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              43,
+              "putfield",
+              "BlockBuster.highScoreID"
+            ],
+            [
+              45,
+              "getfield",
+              "BlockBuster.highScoreID"
+            ],
+            [
+              49,
+              "getfield",
+              "BlockBuster.highScoreID"
+            ],
+            [
+              52,
+              "putfield",
+              "BlockBuster.highScoreID"
+            ],
+            [
+              54,
+              "getfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              56,
+              "getfield",
+              "BlockBuster.highScoreID"
+            ],
+            [
+              73,
+              "putstatic",
+              "Court.hiscore"
+            ],
+            [
+              76,
+              "putstatic",
+              "Court.hiscore"
+            ]
+          ]
+        },
+        {
+          "nome": "pause",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "BlockBuster.paused"
+            ]
+          ]
+        },
+        {
+          "nome": "pauseApp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 3,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "run",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 97,
+          "apis": {
+            "java/lang/Thread.sleep": 1,
+            "javax/microedition/lcdui/Displayable.removeCommand": 2,
+            "javax/microedition/lcdui/Displayable.addCommand": 2,
+            "javax/microedition/lcdui/Canvas.repaint": 1
+          },
+          "constantes": [
+            [
+              1,
+              0
+            ],
+            [
+              21,
+              2
+            ],
+            [
+              24,
+              2
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              33,
+              1
+            ],
+            [
+              37,
+              0
+            ],
+            [
+              56,
+              0
+            ],
+            [
+              66,
+              2
+            ],
+            [
+              75,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              10,
+              "java/lang/Thread.sleep"
+            ],
+            [
+              48,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              53,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              81,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              86,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              92,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "BlockBuster.paused"
+            ],
+            [
+              5,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              8,
+              "getfield",
+              "BlockBuster.gamespeed"
+            ],
+            [
+              14,
+              "getfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              19,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              28,
+              "getfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              31,
+              "putfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              36,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              40,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              42,
+              "getfield",
+              "BlockBuster.StageNo"
+            ],
+            [
+              45,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              47,
+              "getfield",
+              "BlockBuster.Cmdstop"
+            ],
+            [
+              50,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              52,
+              "getfield",
+              "BlockBuster.CmdPlay"
+            ],
+            [
+              55,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              60,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              64,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              70,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              74,
+              "getfield",
+              "BlockBuster.court"
+            ],
+            [
+              78,
+              "getfield",
+              "BlockBuster.court"
+            ]
+          ]
+        },
+        {
+          "nome": "setSpeed",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "BlockBuster.gamespeed"
+            ]
+          ]
+        },
+        {
+          "nome": "showTitle",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 11,
+          "apis": {
+            "javax/microedition/lcdui/Display.setCurrent": 1,
+            "javax/microedition/lcdui/Canvas.repaint": 1
+          },
+          "constantes": [
+            [
+              5,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              9,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "BlockBuster.display"
+            ],
+            [
+              3,
+              "getfield",
+              "BlockBuster.mbox"
+            ],
+            [
+              6,
+              "putstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              8,
+              "getfield",
+              "BlockBuster.mbox"
+            ]
+          ]
+        },
+        {
+          "nome": "startApp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 12,
+          "apis": {
+            "javax/microedition/rms/RecordStore.openRecordStore": 1
+          },
+          "constantes": [
+            [
+              2,
+              1
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              3,
+              "javax/microedition/rms/RecordStore.openRecordStore"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "BlockBuster.RStore"
+            ],
+            [
+              8,
+              "putstatic",
+              "Court.hiscore"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "javax/microedition/midlet/MIDlet.<init>": 1,
+        "javax/microedition/lcdui/Command.<init>": 5,
+        "javax/microedition/lcdui/Display.getDisplay": 1,
+        "javax/microedition/lcdui/Displayable.addCommand": 11,
+        "javax/microedition/lcdui/Displayable.setCommandListener": 3,
+        "javax/microedition/lcdui/Display.setCurrent": 6,
+        "javax/microedition/lcdui/Canvas.repaint": 4,
+        "java/lang/Thread.sleep": 3,
+        "javax/microedition/lcdui/Displayable.removeCommand": 8,
+        "java/lang/Thread.<init>": 1,
+        "java/lang/Thread.start": 1,
+        "java/io/ByteArrayOutputStream.<init>": 2,
+        "java/io/DataOutputStream.<init>": 2,
+        "java/io/DataOutputStream.writeInt": 2,
+        "java/io/ByteArrayOutputStream.toByteArray": 2,
+        "javax/microedition/rms/RecordStore.setRecord": 1,
+        "javax/microedition/midlet/MIDlet.notifyDestroyed": 1,
+        "javax/microedition/rms/RecordStore.getNumRecords": 1,
+        "javax/microedition/rms/RecordStore.addRecord": 1,
+        "javax/microedition/rms/RecordStore.getNextRecordID": 1,
+        "javax/microedition/rms/RecordStore.getRecord": 1,
+        "java/io/ByteArrayInputStream.<init>": 1,
+        "java/io/DataInputStream.<init>": 1,
+        "java/io/DataInputStream.readInt": 1,
+        "javax/microedition/rms/RecordStore.openRecordStore": 1
+      },
+      "padroes": [
+        "CANVAS",
+        "TEM_RUN",
+        "TEM_STARTAPP"
+      ]
+    },
+    {
+      "arquivo": "Court.class",
+      "nome": "Court",
+      "super": "Canvas",
+      "campos": [
+        {
+          "nome": "paddle",
+          "desc": "LPaddle;",
+          "tipo_c": "Paddle*"
+        },
+        {
+          "nome": "balls",
+          "desc": "[LBall;",
+          "tipo_c": "Ball**"
+        },
+        {
+          "nome": "paddlemove",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "PaddleDirection",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ballsInPlay",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "MsgStatus",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "Msging",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "Playing",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "StageNo",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "blocktable",
+          "desc": "[[I",
+          "tipo_c": "int**"
+        },
+        {
+          "nome": "blockLeft",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "score",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ItemMove",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "itemX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "itemY",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "rand",
+          "desc": "Ljava/util/Random;",
+          "tipo_c": "Random*"
+        },
+        {
+          "nome": "blockbuster",
+          "desc": "LBlockBuster;",
+          "tipo_c": "BlockBuster*"
+        },
+        {
+          "nome": "ballsRequested",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "itemType",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "life",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "hiscore",
+          "desc": "I",
+          "tipo_c": "int"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<clinit>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 13,
+          "apis": {
+            "java/util/Random.<init>": 1
+          },
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              10,
+              "java/util/Random.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "putstatic",
+              "Court.Msging"
+            ],
+            [
+              3,
+              "putstatic",
+              "Court.score"
+            ],
+            [
+              5,
+              "putstatic",
+              "Court.itemX"
+            ],
+            [
+              7,
+              "putstatic",
+              "Court.itemY"
+            ],
+            [
+              11,
+              "putstatic",
+              "Court.rand"
+            ]
+          ]
+        },
+        {
+          "nome": "<init>",
+          "desc": "(LBlockBuster;)V",
+          "tipo_ret": "void",
+          "n_instr": 80,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.<init>": 1
+          },
+          "constantes": [
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              10,
+              8
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              20,
+              1
+            ],
+            [
+              23,
+              0
+            ],
+            [
+              34,
+              3
+            ],
+            [
+              37,
+              0
+            ],
+            [
+              56,
+              0
+            ],
+            [
+              60,
+              1
+            ],
+            [
+              62,
+              3
+            ],
+            [
+              65,
+              0
+            ],
+            [
+              68,
+              0
+            ],
+            [
+              71,
+              1
+            ],
+            [
+              77,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/lcdui/Canvas.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "Court.MsgStatus"
+            ],
+            [
+              7,
+              "putfield",
+              "Court.Playing"
+            ],
+            [
+              12,
+              "putfield",
+              "Court.blocktable"
+            ],
+            [
+              15,
+              "putfield",
+              "Court.blockLeft"
+            ],
+            [
+              18,
+              "putfield",
+              "Court.ItemMove"
+            ],
+            [
+              21,
+              "putfield",
+              "Court.ballsRequested"
+            ],
+            [
+              24,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              27,
+              "putfield",
+              "Court.blockbuster"
+            ],
+            [
+              32,
+              "putfield",
+              "Court.paddle"
+            ],
+            [
+              36,
+              "putfield",
+              "Court.balls"
+            ],
+            [
+              41,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              51,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              55,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              61,
+              "putfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              63,
+              "putstatic",
+              "Court.life"
+            ],
+            [
+              66,
+              "putfield",
+              "Court.paddlemove"
+            ],
+            [
+              69,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              72,
+              "putfield",
+              "Court.StageNo"
+            ],
+            [
+              75,
+              "getfield",
+              "Court.StageNo"
+            ],
+            [
+              78,
+              "putstatic",
+              "Court.hiscore"
+            ]
+          ]
+        },
+        {
+          "nome": "BallMove",
+          "desc": "(Z)V",
+          "tipo_ret": "void",
+          "n_instr": 14,
+          "apis": {},
+          "constantes": [
+            [
+              4,
+              0
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              3,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              9,
+              "getfield",
+              "Court.balls"
+            ]
+          ]
+        },
+        {
+          "nome": "ChgMsgStatus",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Court.MsgStatus"
+            ]
+          ]
+        },
+        {
+          "nome": "GetMsgStatus",
+          "desc": "()I",
+          "tipo_ret": "int",
+          "n_instr": 3,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.MsgStatus"
+            ]
+          ]
+        },
+        {
+          "nome": "GoNext",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 52,
+          "apis": {},
+          "constantes": [
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              18,
+              1
+            ],
+            [
+              23,
+              2
+            ],
+            [
+              28,
+              0
+            ],
+            [
+              33,
+              0
+            ],
+            [
+              41,
+              60
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Court.StageNo"
+            ],
+            [
+              5,
+              "getfield",
+              "Court.StageNo"
+            ],
+            [
+              9,
+              "putfield",
+              "Court.ItemMove"
+            ],
+            [
+              12,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              15,
+              "putfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              17,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              22,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              27,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              32,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              37,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              40,
+              "getfield",
+              "Court.blockbuster"
+            ],
+            [
+              44,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              47,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              49,
+              "getfield",
+              "Court.StageNo"
+            ]
+          ]
+        },
+        {
+          "nome": "ItemPaint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 324,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 9,
+            "javax/microedition/lcdui/Graphics.fillArc": 10,
+            "javax/microedition/lcdui/Graphics.drawArc": 3
+          },
+          "constantes": [
+            [
+              2,
+              1
+            ],
+            [
+              5,
+              255
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              13,
+              360
+            ],
+            [
+              18,
+              2
+            ],
+            [
+              26,
+              11
+            ],
+            [
+              27,
+              9
+            ],
+            [
+              28,
+              0
+            ],
+            [
+              29,
+              360
+            ],
+            [
+              34,
+              3
+            ],
+            [
+              42,
+              11
+            ],
+            [
+              43,
+              9
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              45,
+              360
+            ],
+            [
+              50,
+              4
+            ],
+            [
+              58,
+              11
+            ],
+            [
+              59,
+              9
+            ],
+            [
+              60,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              6,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              14,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              22,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              30,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              38,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              46,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              54,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              62,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              70,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              78,
+              "javax/microedition/lcdui/Graphics.drawArc"
+            ],
+            [
+              90,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              98,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              106,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              116,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              128,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              136,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              144,
+              "javax/microedition/lcdui/Graphics.drawArc"
+            ],
+            [
+              156,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              164,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              172,
+              "javax/microedition/lcdui/Graphics.drawArc"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.itemType"
+            ],
+            [
+              8,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              9,
+              "getstatic",
+              "Court.itemY"
+            ],
+            [
+              17,
+              "getfield",
+              "Court.itemType"
+            ],
+            [
+              24,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              25,
+              "getstatic",
+              "Court.itemY"
+            ],
+            [
+              33,
+              "getfield",
+              "Court.itemType"
+            ],
+            [
+              40,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              41,
+              "getstatic",
+              "Court.itemY"
+            ],
+            [
+              49,
+              "getfield",
+              "Court.itemType"
+            ],
+            [
+              56,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              57,
+              "getstatic",
+              "Court.itemY"
+            ],
+            [
+              65,
+              "getfield",
+              "Court.itemType"
+            ],
+            [
+              72,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              73,
+              "getstatic",
+              "Court.itemY"
+            ],
+            [
+              80,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              83,
+              "getstatic",
+              "Court.itemY"
+            ],
+            [
+              93,
+              "getfield",
+              "Court.itemType"
+            ],
+            [
+              100,
+              "getstatic",
+              "Court.itemX"
+            ],
+            [
+              101,
+              "getstatic",
+              "Court.itemY"
+            ]
+          ]
+        },
+        {
+          "nome": "addBall",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 40,
+          "apis": {},
+          "constantes": [
+            [
+              3,
+              1
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              29,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Court.ballsRequested"
+            ],
+            [
+              5,
+              "putfield",
+              "Court.ballsRequested"
+            ],
+            [
+              7,
+              "getfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              13,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              19,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              23,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              28,
+              "getfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              31,
+              "putfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              36,
+              "getfield",
+              "Court.balls"
+            ]
+          ]
+        },
+        {
+          "nome": "didntHit",
+          "desc": "()Z",
+          "tipo_ret": "int",
+          "n_instr": 13,
+          "apis": {},
+          "constantes": [
+            [
+              3,
+              1
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              11,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              5,
+              "putfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              7,
+              "getfield",
+              "Court.ballsInPlay"
+            ]
+          ]
+        },
+        {
+          "nome": "displayScore",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 103,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 2,
+            "java/lang/StringBuffer.<init>": 2,
+            "java/lang/String.<init>": 1,
+            "java/lang/StringBuffer.append": 2,
+            "java/lang/StringBuffer.toString": 2,
+            "javax/microedition/lcdui/Graphics.drawString": 2,
+            "javax/microedition/lcdui/Graphics.fillArc": 3
+          },
+          "constantes": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              8,
+              48
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              19,
+              48
+            ],
+            [
+              24,
+              1
+            ],
+            [
+              26,
+              100
+            ],
+            [
+              28,
+              10
+            ],
+            [
+              30,
+              48
+            ],
+            [
+              35,
+              0
+            ],
+            [
+              37,
+              1000
+            ],
+            [
+              39,
+              10
+            ],
+            [
+              41,
+              48
+            ],
+            [
+              46,
+              255
+            ],
+            [
+              59,
+              95
+            ],
+            [
+              60,
+              85
+            ],
+            [
+              61,
+              24
+            ]
+          ],
+          "chamadas": [
+            [
+              47,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              52,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              56,
+              "java/lang/String.<init>"
+            ],
+            [
+              57,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              58,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              62,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              67,
+              "java/lang/StringBuffer.<init>"
+            ],
+            [
+              69,
+              "java/lang/StringBuffer.append"
+            ],
+            [
+              70,
+              "java/lang/StringBuffer.toString"
+            ],
+            [
+              74,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              77,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              85,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              93,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ],
+            [
+              101,
+              "javax/microedition/lcdui/Graphics.fillArc"
+            ]
+          ],
+          "fields": [
+            [
+              5,
+              "getstatic",
+              "Court.score"
+            ],
+            [
+              14,
+              "getstatic",
+              "Court.score"
+            ],
+            [
+              25,
+              "getstatic",
+              "Court.score"
+            ],
+            [
+              36,
+              "getstatic",
+              "Court.score"
+            ],
+            [
+              68,
+              "getstatic",
+              "Court.life"
+            ]
+          ]
+        },
+        {
+          "nome": "isBlockHit",
+          "desc": "(II)Z",
+          "tipo_ret": "int",
+          "n_instr": 155,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              19,
+              13
+            ],
+            [
+              22,
+              24
+            ],
+            [
+              24,
+              1
+            ],
+            [
+              28,
+              25
+            ],
+            [
+              31,
+              36
+            ],
+            [
+              33,
+              2
+            ],
+            [
+              37,
+              37
+            ],
+            [
+              40,
+              48
+            ],
+            [
+              42,
+              3
+            ],
+            [
+              46,
+              49
+            ],
+            [
+              49,
+              60
+            ],
+            [
+              51,
+              4
+            ],
+            [
+              55,
+              61
+            ],
+            [
+              58,
+              71
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              113,
+              "getfield",
+              "Court.blocktable"
+            ],
+            [
+              128,
+              "getstatic",
+              "Court.score"
+            ],
+            [
+              131,
+              "putstatic",
+              "Court.score"
+            ],
+            [
+              135,
+              "getfield",
+              "Court.ItemMove"
+            ],
+            [
+              147,
+              "getfield",
+              "Court.blocktable"
+            ]
+          ]
+        },
+        {
+          "nome": "isBlockHitEdge",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 52,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              13,
+              24
+            ],
+            [
+              16,
+              25
+            ],
+            [
+              19,
+              36
+            ],
+            [
+              22,
+              37
+            ],
+            [
+              25,
+              48
+            ],
+            [
+              28,
+              49
+            ],
+            [
+              31,
+              60
+            ],
+            [
+              34,
+              61
+            ],
+            [
+              37,
+              72
+            ],
+            [
+              40,
+              73
+            ],
+            [
+              43,
+              84
+            ],
+            [
+              46,
+              85
+            ],
+            [
+              48,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": []
+        },
+        {
+          "nome": "isPaddleHit",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 9,
+          "apis": {},
+          "constantes": [
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.paddle"
+            ]
+          ]
+        },
+        {
+          "nome": "isPaddleHitEdgeL",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 5,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.paddle"
+            ]
+          ]
+        },
+        {
+          "nome": "isPaddleHitEdgeR",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 5,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.paddle"
+            ]
+          ]
+        },
+        {
+          "nome": "itemStart",
+          "desc": "(II)V",
+          "tipo_ret": "void",
+          "n_instr": 75,
+          "apis": {
+            "java/util/Random.nextInt": 1
+          },
+          "constantes": [
+            [
+              1,
+              11
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              16,
+              100
+            ],
+            [
+              20,
+              21
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              27,
+              36
+            ],
+            [
+              30,
+              2
+            ],
+            [
+              34,
+              54
+            ],
+            [
+              37,
+              3
+            ],
+            [
+              41,
+              70
+            ],
+            [
+              44,
+              4
+            ],
+            [
+              48,
+              89
+            ],
+            [
+              51,
+              5
+            ],
+            [
+              55,
+              90
+            ],
+            [
+              58,
+              6
+            ],
+            [
+              62,
+              95
+            ],
+            [
+              65,
+              7
+            ]
+          ],
+          "chamadas": [
+            [
+              13,
+              "java/util/Random.nextInt"
+            ]
+          ],
+          "fields": [
+            [
+              5,
+              "putstatic",
+              "Court.itemX"
+            ],
+            [
+              11,
+              "putstatic",
+              "Court.itemY"
+            ],
+            [
+              12,
+              "getstatic",
+              "Court.rand"
+            ],
+            [
+              24,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              31,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              38,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              45,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              52,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              59,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              66,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              70,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              73,
+              "putfield",
+              "Court.ItemMove"
+            ]
+          ]
+        },
+        {
+          "nome": "keyPressed",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 25,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.getGameAction": 1,
+            "javax/microedition/lcdui/Canvas.repaint": 2
+          },
+          "constantes": [
+            [
+              7,
+              1
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              19,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Canvas.getGameAction"
+            ],
+            [
+              13,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              22,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ]
+          ],
+          "fields": [
+            [
+              8,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              11,
+              "putfield",
+              "Court.paddlemove"
+            ],
+            [
+              17,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              20,
+              "putfield",
+              "Court.paddlemove"
+            ]
+          ]
+        },
+        {
+          "nome": "keyReleased",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 31,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.getGameAction": 1,
+            "javax/microedition/lcdui/Canvas.repaint": 2
+          },
+          "constantes": [
+            [
+              10,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Canvas.getGameAction"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              28,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ]
+          ],
+          "fields": [
+            [
+              7,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              11,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              14,
+              "putfield",
+              "Court.paddlemove"
+            ],
+            [
+              19,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              23,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              26,
+              "putfield",
+              "Court.paddlemove"
+            ]
+          ]
+        },
+        {
+          "nome": "keyRepeated",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 24,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.getGameAction": 1
+          },
+          "constantes": [
+            [
+              7,
+              1
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              17,
+              20
+            ],
+            [
+              21,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Canvas.getGameAction"
+            ]
+          ],
+          "fields": [
+            [
+              8,
+              "putfield",
+              "Court.paddlemove"
+            ],
+            [
+              11,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              15,
+              "putfield",
+              "Court.paddlemove"
+            ],
+            [
+              18,
+              "putfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              22,
+              "putfield",
+              "Court.paddlemove"
+            ]
+          ]
+        },
+        {
+          "nome": "moveBall",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              4,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.Playing"
+            ],
+            [
+              8,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              15,
+              "getfield",
+              "Court.balls"
+            ]
+          ]
+        },
+        {
+          "nome": "paint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 321,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 11,
+            "javax/microedition/lcdui/Graphics.fillRect": 9,
+            "javax/microedition/lcdui/Graphics.drawLine": 12
+          },
+          "constantes": [
+            [
+              11,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              13,
+              96
+            ],
+            [
+              14,
+              100
+            ],
+            [
+              20,
+              0
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              22,
+              96
+            ],
+            [
+              23,
+              4
+            ],
+            [
+              26,
+              92
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              28,
+              4
+            ],
+            [
+              29,
+              83
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              33,
+              0
+            ],
+            [
+              34,
+              4
+            ],
+            [
+              35,
+              83
+            ],
+            [
+              38,
+              0
+            ],
+            [
+              41,
+              4
+            ],
+            [
+              42,
+              4
+            ],
+            [
+              43,
+              92
+            ]
+          ],
+          "chamadas": [
+            [
+              9,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              15,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              18,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              24,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              30,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              36,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              39,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              45,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              51,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              57,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              60,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              66,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              72,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              78,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              81,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              87,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              93,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              99,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              102,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              108,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ]
+          ],
+          "fields": [
+            [
+              0,
+              "getstatic",
+              "Court.Msging"
+            ],
+            [
+              4,
+              "getfield",
+              "Court.Playing"
+            ],
+            [
+              123,
+              "putfield",
+              "Court.blockLeft"
+            ],
+            [
+              131,
+              "getfield",
+              "Court.blocktable"
+            ],
+            [
+              141,
+              "putfield",
+              "Court.blockLeft"
+            ],
+            [
+              224,
+              "getfield",
+              "Court.blockLeft"
+            ],
+            [
+              227,
+              "putstatic",
+              "Court.Msging"
+            ],
+            [
+              229,
+              "getfield",
+              "Court.StageNo"
+            ],
+            [
+              243,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              251,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              255,
+              "getfield",
+              "Court.ItemMove"
+            ],
+            [
+              261,
+              "getfield",
+              "Court.paddlemove"
+            ],
+            [
+              264,
+              "getfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              268,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              272,
+              "getfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              276,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              280,
+              "getfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              284,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              288,
+              "getfield",
+              "Court.PaddleDirection"
+            ],
+            [
+              292,
+              "getfield",
+              "Court.paddle"
+            ]
+          ]
+        },
+        {
+          "nome": "reStart",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 45,
+          "apis": {},
+          "constantes": [
+            [
+              4,
+              1
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              19,
+              0
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              29,
+              0
+            ],
+            [
+              34,
+              0
+            ],
+            [
+              39,
+              60
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              3,
+              "getstatic",
+              "Court.life"
+            ],
+            [
+              6,
+              "putstatic",
+              "Court.life"
+            ],
+            [
+              7,
+              "getstatic",
+              "Court.life"
+            ],
+            [
+              10,
+              "putstatic",
+              "Court.Msging"
+            ],
+            [
+              17,
+              "putfield",
+              "Court.ItemMove"
+            ],
+            [
+              20,
+              "putfield",
+              "Court.itemType"
+            ],
+            [
+              23,
+              "putfield",
+              "Court.ballsInPlay"
+            ],
+            [
+              25,
+              "getfield",
+              "Court.paddle"
+            ],
+            [
+              28,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              33,
+              "getfield",
+              "Court.balls"
+            ],
+            [
+              38,
+              "getfield",
+              "Court.blockbuster"
+            ],
+            [
+              42,
+              "getfield",
+              "Court.paddle"
+            ]
+          ]
+        },
+        {
+          "nome": "setBlockTable",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 181,
+          "apis": {},
+          "constantes": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              17,
+              1
+            ],
+            [
+              21,
+              2
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              25,
+              3
+            ],
+            [
+              27,
+              2
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              33,
+              3
+            ],
+            [
+              35,
+              2
+            ],
+            [
+              37,
+              3
+            ],
+            [
+              39,
+              1
+            ],
+            [
+              41,
+              1
+            ],
+            [
+              45,
+              4
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              136,
+              "getfield",
+              "Court.blocktable"
+            ],
+            [
+              147,
+              "getfield",
+              "Court.blocktable"
+            ],
+            [
+              158,
+              "getfield",
+              "Court.blocktable"
+            ],
+            [
+              166,
+              "getfield",
+              "Court.blocktable"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "java/util/Random.<init>": 1,
+        "javax/microedition/lcdui/Canvas.<init>": 1,
+        "javax/microedition/lcdui/Graphics.setColor": 22,
+        "javax/microedition/lcdui/Graphics.fillArc": 13,
+        "javax/microedition/lcdui/Graphics.drawArc": 3,
+        "java/lang/StringBuffer.<init>": 2,
+        "java/lang/String.<init>": 1,
+        "java/lang/StringBuffer.append": 2,
+        "java/lang/StringBuffer.toString": 2,
+        "javax/microedition/lcdui/Graphics.drawString": 2,
+        "java/util/Random.nextInt": 1,
+        "javax/microedition/lcdui/Canvas.getGameAction": 3,
+        "javax/microedition/lcdui/Canvas.repaint": 4,
+        "javax/microedition/lcdui/Graphics.fillRect": 9,
+        "javax/microedition/lcdui/Graphics.drawLine": 12
+      },
+      "padroes": [
+        "CANVAS",
+        "TEM_PAINT",
+        "TEM_INPUT"
+      ]
+    },
+    {
+      "arquivo": "MsgBox.class",
+      "nome": "MsgBox",
+      "super": "Canvas",
+      "campos": [
+        {
+          "nome": "msgType",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "stgNum",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "mscore",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "hiscore",
+          "desc": "I",
+          "tipo_c": "int"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<init>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 11,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.<init>": 1
+          },
+          "constantes": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/lcdui/Canvas.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              3,
+              "putstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              5,
+              "putstatic",
+              "MsgBox.stgNum"
+            ],
+            [
+              7,
+              "putstatic",
+              "MsgBox.mscore"
+            ],
+            [
+              9,
+              "putstatic",
+              "MsgBox.hiscore"
+            ]
+          ]
+        },
+        {
+          "nome": "paint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 322,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 11,
+            "javax/microedition/lcdui/Graphics.fillRect": 14,
+            "javax/microedition/lcdui/Font.getFont": 5,
+            "javax/microedition/lcdui/Graphics.setFont": 5,
+            "javax/microedition/lcdui/Graphics.drawString": 16,
+            "javax/microedition/lcdui/Graphics.drawLine": 3,
+            "javax/microedition/lcdui/Graphics.fillArc": 1,
+            "java/lang/StringBuffer.<init>": 5,
+            "java/lang/StringBuffer.append": 5,
+            "java/lang/StringBuffer.toString": 5
+          },
+          "constantes": [
+            [
+              1,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              96
+            ],
+            [
+              7,
+              100
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              23,
+              96
+            ],
+            [
+              24,
+              100
+            ],
+            [
+              27,
+              13311
+            ],
+            [
+              30,
+              0
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              32,
+              16
+            ],
+            [
+              37,
+              48
+            ],
+            [
+              38,
+              5
+            ],
+            [
+              39,
+              17
+            ],
+            [
+              45,
+              3
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              8,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              11,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              17,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              25,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              28,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              33,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              34,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              40,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              43,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              49,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              55,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              61,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              67,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              73,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              76,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              82,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              88,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              94,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ]
+          ],
+          "fields": [
+            [
+              18,
+              "getstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              176,
+              "getstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              190,
+              "getstatic",
+              "MsgBox.stgNum"
+            ],
+            [
+              198,
+              "getstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              208,
+              "getstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              234,
+              "getstatic",
+              "MsgBox.hiscore"
+            ],
+            [
+              252,
+              "getstatic",
+              "MsgBox.mscore"
+            ],
+            [
+              260,
+              "getstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              270,
+              "getstatic",
+              "MsgBox.msgType"
+            ],
+            [
+              296,
+              "getstatic",
+              "MsgBox.hiscore"
+            ],
+            [
+              314,
+              "getstatic",
+              "MsgBox.mscore"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "javax/microedition/lcdui/Canvas.<init>": 1,
+        "javax/microedition/lcdui/Graphics.setColor": 11,
+        "javax/microedition/lcdui/Graphics.fillRect": 14,
+        "javax/microedition/lcdui/Font.getFont": 5,
+        "javax/microedition/lcdui/Graphics.setFont": 5,
+        "javax/microedition/lcdui/Graphics.drawString": 16,
+        "javax/microedition/lcdui/Graphics.drawLine": 3,
+        "javax/microedition/lcdui/Graphics.fillArc": 1,
+        "java/lang/StringBuffer.<init>": 5,
+        "java/lang/StringBuffer.append": 5,
+        "java/lang/StringBuffer.toString": 5
+      },
+      "padroes": [
+        "CANVAS",
+        "TEM_PAINT"
+      ]
+    },
+    {
+      "arquivo": "Paddle.class",
+      "nome": "Paddle",
+      "super": "Object",
+      "campos": [
+        {
+          "nome": "minX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "maxX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "posX",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "posY",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "speed",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "paddleWidth",
+          "desc": "I",
+          "tipo_c": "int"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<init>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 5,
+          "apis": {
+            "java/lang/Object.<init>": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              1,
+              "java/lang/Object.<init>"
+            ]
+          ],
+          "fields": []
+        },
+        {
+          "nome": "GetPos",
+          "desc": "()I",
+          "tipo_ret": "int",
+          "n_instr": 3,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "ItemisHit",
+          "desc": "(II)Z",
+          "tipo_ret": "int",
+          "n_instr": 27,
+          "apis": {},
+          "constantes": [
+            [
+              9,
+              9
+            ],
+            [
+              13,
+              11
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              3,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              7,
+              "getfield",
+              "Paddle.posY"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "bigger",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 29,
+          "apis": {},
+          "constantes": [
+            [
+              3,
+              3
+            ],
+            [
+              8,
+              30
+            ],
+            [
+              11,
+              30
+            ],
+            [
+              14,
+              92
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              5,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              7,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              12,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              18,
+              "putfield",
+              "Paddle.maxX"
+            ],
+            [
+              20,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              22,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              26,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              27,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "biggest",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              39
+            ],
+            [
+              4,
+              92
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              6,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              8,
+              "putfield",
+              "Paddle.maxX"
+            ],
+            [
+              10,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              12,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              17,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "init",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 22,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              18
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              7,
+              92
+            ],
+            [
+              13,
+              40
+            ],
+            [
+              16,
+              80
+            ],
+            [
+              19,
+              6
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              5,
+              "putfield",
+              "Paddle.minX"
+            ],
+            [
+              9,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              11,
+              "putfield",
+              "Paddle.maxX"
+            ],
+            [
+              14,
+              "putfield",
+              "Paddle.posX"
+            ],
+            [
+              17,
+              "putfield",
+              "Paddle.posY"
+            ],
+            [
+              20,
+              "putfield",
+              "Paddle.speed"
+            ]
+          ]
+        },
+        {
+          "nome": "isHit",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 23,
+          "apis": {},
+          "constantes": [
+            [
+              7,
+              5
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              20,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              3,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              15,
+              "getfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "isHitEdgeL",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 15,
+          "apis": {},
+          "constantes": [
+            [
+              6,
+              1
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              13,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "isHitEdgeR",
+          "desc": "(I)Z",
+          "tipo_ret": "int",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              11,
+              -4
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              17,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              3,
+              "getfield",
+              "Paddle.paddleWidth"
+            ]
+          ]
+        },
+        {
+          "nome": "left",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 17,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              4,
+              "getfield",
+              "Paddle.speed"
+            ],
+            [
+              6,
+              "putfield",
+              "Paddle.posX"
+            ],
+            [
+              8,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              10,
+              "getfield",
+              "Paddle.minX"
+            ],
+            [
+              14,
+              "getfield",
+              "Paddle.minX"
+            ],
+            [
+              15,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "leftF",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              5,
+              6
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              4,
+              "getfield",
+              "Paddle.speed"
+            ],
+            [
+              8,
+              "putfield",
+              "Paddle.posX"
+            ],
+            [
+              10,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              12,
+              "getfield",
+              "Paddle.minX"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.minX"
+            ],
+            [
+              17,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "moveCenter",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 7,
+          "apis": {},
+          "constantes": [
+            [
+              3,
+              2
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              5,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "paint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 37,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 2,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Graphics.drawLine": 1
+          },
+          "constantes": [
+            [
+              1,
+              26112
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              18,
+              2
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              29,
+              3
+            ],
+            [
+              33,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              11,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              14,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              35,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ]
+          ],
+          "fields": [
+            [
+              5,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              7,
+              "getfield",
+              "Paddle.posY"
+            ],
+            [
+              9,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              17,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              21,
+              "getfield",
+              "Paddle.posY"
+            ],
+            [
+              25,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              27,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              32,
+              "getfield",
+              "Paddle.posY"
+            ]
+          ]
+        },
+        {
+          "nome": "right",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 17,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              4,
+              "getfield",
+              "Paddle.speed"
+            ],
+            [
+              6,
+              "putfield",
+              "Paddle.posX"
+            ],
+            [
+              8,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              10,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              14,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              15,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "rightF",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              5,
+              6
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              4,
+              "getfield",
+              "Paddle.speed"
+            ],
+            [
+              8,
+              "putfield",
+              "Paddle.posX"
+            ],
+            [
+              10,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              12,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              17,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "smaller",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 29,
+          "apis": {},
+          "constantes": [
+            [
+              8,
+              9
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              14,
+              92
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              5,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              7,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              12,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              18,
+              "putfield",
+              "Paddle.maxX"
+            ],
+            [
+              20,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              22,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              26,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              27,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        },
+        {
+          "nome": "smallest",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 19,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              9
+            ],
+            [
+              4,
+              92
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              6,
+              "getfield",
+              "Paddle.paddleWidth"
+            ],
+            [
+              8,
+              "putfield",
+              "Paddle.maxX"
+            ],
+            [
+              10,
+              "getfield",
+              "Paddle.posX"
+            ],
+            [
+              12,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              16,
+              "getfield",
+              "Paddle.maxX"
+            ],
+            [
+              17,
+              "putfield",
+              "Paddle.posX"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "java/lang/Object.<init>": 1,
+        "javax/microedition/lcdui/Graphics.setColor": 2,
+        "javax/microedition/lcdui/Graphics.fillRect": 1,
+        "javax/microedition/lcdui/Graphics.drawLine": 1
+      },
+      "padroes": [
+        "TEM_PAINT"
+      ]
+    }
+  ],
+  "n_classes": 5
+}
